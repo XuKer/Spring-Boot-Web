@@ -2,7 +2,7 @@ package com.xuker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//此注解为组合注解
+//此注解为组合注解，来自于包org.springframework.boot.autoconfigure
 /**
  *@Target({ElementType.TYPE})--可用于类或者接口上--注解只能在ElementType设定的范围内使用，否则将会编译报错
  @Retention(RetentionPolicy.RUNTIME)--表示它所注解的注解保留多久--根据RetentionPolicy而定
@@ -62,3 +62,25 @@ public class SpringBootCore {
  *      2.@Configuration不可以是匿名类；
  *      3.嵌套的configuration必须是静态类。
  */
+
+/**
+ *   @EnableAutoConfiguration
+ *    此注解的关键是@Import(EnableAutoConfigurationImportSelector.class)
+ *    它使用 SpringFactoriesLoader.loadFactoryNames方法区扫描具有META-INF/spring.factories文件的
+ *    jar包，org.springframework.boot.autoconfigure jar包中就有一个spring.factories文件，此文件里
+ *    声明了有哪些自动配置，他们都使用@Conditional元注解，只是使用了不同的条件（Conditional）注解。
+ *    条件注解列表
+ *    @ConditionalOnBean                    当容器里有指定的Bean的条件下
+ *    @ConditionalOnClass                   当类路径下有指定的类的条件下
+ *    @ConditionalOnExpression             基于SpEL表达式作为判断条件
+ *    @ConditionalOnJava                    基于JVM版本作为判断条件
+ *    @ConditionalOnJndi                    在JNDI存在的条件下查找指定的位置
+ *    @ConditionalOnMissingBean            在容器里没有指定Bean的情况下
+ *    @ConditionalOnMissingClass           在类路径下没有指定的 类的条件下
+ *    @ConditionalOnNotWebApplication     当前项目不是Web项目的条件下
+ *    @ConditionalOnProperty               指定的属性是否有指定的值
+ *    @ConditionalOnResource               类路径是否有指定的值
+ *    @ConditionalOnSingleCandidate       当指定Bean在容器中只有一个，或者虽然有多个但是指定首选的Bean
+ *    @ConditionalOnWebApplication        当前项目是Web项目的条件下
+ */
+
