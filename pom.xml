@@ -9,7 +9,7 @@
 
     <modules>
         <module>SpringBootCore</module>
-
+        <module>SpringBootWeb</module>
     </modules>
 
 
