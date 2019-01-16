@@ -1,10 +1,16 @@
 package com.xuker;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+/**
+ * @author XuKe
+ */
 @SpringBootApplication
-public class SpringBootWebApplication {
+@MapperScan("com.xuker.dao")
+public class SpringBootWebApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootWebApplication.class, args);

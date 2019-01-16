@@ -1,6 +1,5 @@
-package com.xuker.web;
+package com.xuker.controller;
 
-import com.xuke.spring_boot_starter_hello.HelloService;
 import com.xuker.dto.UserSetting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

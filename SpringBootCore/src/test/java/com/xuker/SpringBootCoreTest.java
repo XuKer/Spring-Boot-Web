@@ -30,7 +30,7 @@ public class SpringBootCoreTest {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new com.xuker.web.HelloController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new com.xuker.controller.HelloController()).build();
 	}
 
 	@Test
