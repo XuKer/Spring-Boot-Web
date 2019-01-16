@@ -1,12 +1,16 @@
 package com.xuker.po;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
-
+@ApiModel(value="用户对象")
 public class User implements Serializable {
+    @ApiModelProperty(value="id" )
     private Integer id;
-
+    @ApiModelProperty(value="用户姓名" ,required=true)
     private String userName;
-
+    @ApiModelProperty(value="用户密码" ,required=true)
     private String password;
 
     private Integer age;

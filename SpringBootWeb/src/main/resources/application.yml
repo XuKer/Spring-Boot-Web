@@ -3,9 +3,10 @@ mybatis:
    mapperLocations: classpath:mapper/*.xml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/student
+    #useSSL=false&
+    url: jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: root
+    password: wusql
     driver-class-name: com.mysql.jdbc.Driver
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -33,4 +34,4 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
-
+    #validationQuery:  select 1 from dual
