@@ -27,4 +27,8 @@ public class WebController {
         model.addAttribute("people", people);
         return "index";
     }
+    @RequestMapping("/hello")
+    public String hello(){
+        return "hello";
+    }
 }
