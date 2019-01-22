@@ -2,6 +2,8 @@ package com.xuker.controller;
 
 
 import com.xuker.dto.Person;
+import com.xuker.utils.RedisUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +13,8 @@ import java.util.List;
 
 @Controller
 public class WebController {
-
+    @Autowired
+    private RedisUtil redisUtil;
     @RequestMapping("/")
     public String index(Model model){
         Person single = new Person("xuker",18);
@@ -27,8 +30,11 @@ public class WebController {
         model.addAttribute("people", people);
         return "index";
     }
+
     @RequestMapping("/hello")
     public String hello(){
+        redisUtil.set("xuker","xuker20190122");
         return "hello";
     }
+
 }
